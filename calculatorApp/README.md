@@ -5,8 +5,10 @@ A lightweight calculator built with
 This project demonstrates basic JavaScript operations, event handling, and simple DOM manipulation.
 ---
 ## ScreenShot
-![Calculator Demo](screanShot.png)
----
+<a >
+  <img src="calculator.gif" alt="Calculator Demo" width="300">
+</a>
+
 
 ## Features
 - Addition, Subtraction, Multiplication, Division
