@@ -1,6 +1,6 @@
 # Text To Speech Converter – Mini JS Demo
 
-<img src="/text-to-speech-conventer/demo.png" alt="Demo GIF" width="500px">
+![Demo GIF](/Text-to-speechConventer/demo.png) 
 
 ## Project Overview
 
@@ -45,5 +45,6 @@ This project is fully **inline** with **HTML, CSS, and JS**, making it easy to r
 
 **Suggested fonts for English readability:**  
 - Poppins, Inter, Lora, or Roboto (Google Fonts recommended)
+
 
 
