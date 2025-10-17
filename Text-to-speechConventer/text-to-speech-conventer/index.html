@@ -1,0 +1,140 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Text To Speech Converter-GreatStack</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-herif;
+        box-sizing: border-box;
+      }
+      .hero {
+        width: 100%;
+        min-height: 100vh;
+        background: linear-gradient(45deg, #010758, #490d61);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+      }
+      .hero h1 {
+        font-size: 45px;
+        font-weight: 500;
+        margin-top: -50px;
+        margin-bottom: 50px;
+      }
+      .hero h1 span {
+        color: #ff2963;
+      }
+      textarea {
+        width: 600px;
+        height: 250px;
+        background: #403d84;
+        color: #fff;
+        font-size: 15px;
+        border: 0;
+        outline: 0;
+        padding: 20px;
+        border-radius: 10px;
+        resize: none;
+        margin-bottom: 30px;
+      }
+      textarea::placeholder{
+        font-size: 16px;
+        color: #ddd;
+
+        
+      }
+      .row{
+        width: 600px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      button{
+        background: #ff2963;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 30px;
+        border-radius: 35px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+    button svg{
+        margin-right: 10px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    select{
+        flex: 1;
+        color: #fff;
+        background:#403d84;
+        height: 50px;
+        padding: 0 20px;
+        outline: 0;
+        border: 0;
+        border-radius: 35px;
+        appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'><path d='M1.5 5.5l6 6 6-6'/></svg>");
+        background-repeat: no-repeat;
+        background-size: 15px;
+        background-position-x: calc(100% - 20px);
+        background-position-y: 20px;
+    }
+   
+
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Text To Speech <span>Conventer</span></h1>
+      <textarea placeholder="Write anything here..."></textarea>
+      <div class="row">
+        <select><svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" viewBox="0 0 16 16">
+    <path d="M1.5 5.5l6 6 6-6"/>
+  </svg></select>
+        <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M10.804 8L5 11.196V4.804L10.804 8z"/>
+  </svg>Listen</button>
+      </div>
+    </div>
+
+    <script>
+        let speech = new SpeechSynthesisUtterance();
+
+        let voices = [];
+        let voiceSelect =document.querySelector("select");
+
+        window.speechSynthesis.onvoiceschanged = ()=>
+{
+    voices =window.speechSynthesis.getVoices();
+    speech.voice =voices[0];
+
+    voices.forEach((voice,i) => (voiceSelect.options[i]= new Option(voice.name,i)));
+};
+
+voiceSelect.addEventListener("change",( )=> {
+    speech.voice = voices[voiceSelect.value];
+})
+
+        document.querySelector("button").addEventListener("click",()=>{
+            speech.text = document.querySelector("textarea").value;
+            window.speechSynthesis.speak(speech);
+        })
+
+    </script>
+  </body>
+</html>
