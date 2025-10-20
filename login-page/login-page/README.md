@@ -1,7 +1,7 @@
 # Modern Login Page with Sliding Panel & Local Storage
 ### Demo
 
-![Login Page Demo](/demo.gif)
+![Login Page Demo](/login-page/demo.gif)
 
 
 A small, interactive **Login / Sign Up page** built to practice **Local Storage** and understand the sliding panel concept. This is my **4th project** in the 100-mini-project series.
@@ -35,3 +35,4 @@ A small, interactive **Login / Sign Up page** built to practice **Local Storage*
 
 ```bash
 git clone <>
+
