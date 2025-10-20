@@ -34,6 +34,7 @@ A small, interactive **Login / Sign Up page** built to practice **Local Storage*
 1. Clone the project:
 
 ```bash
-git clone <>
+git clone <https://github.com/GizzYii/100-mini-Projects-JS-CSS-HTML/tree/Main/login-page/login-page>
+
 
 
